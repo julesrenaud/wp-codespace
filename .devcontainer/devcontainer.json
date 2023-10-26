@@ -3,12 +3,19 @@
 	"dockerComposeFile": "docker-compose.yml",
 	"service": "app",
 	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-	
+
 	// Features to add to the dev container. More info: https://containers.dev/implementors/features.
 	"features": {
 	},
 
 	"customizations": {
+		"codespaces": {
+			"repositories": {
+				"julesrenaud/grand-poney-wordpress-theme": {
+					"permissions": "write-all"
+				}
+			}
+		},
 		"vscode": {
 			"extensions": [
 				"xdebug.php-pack",
@@ -21,7 +28,7 @@
 				"shevaua.phpcs",
 				"ms-vscode.makefile-tools"
 			]
-		}
+		},
 	},
 
 	// For use with PHP or Apache (e.g.php -S localhost:8080 or apache2ctl start)
