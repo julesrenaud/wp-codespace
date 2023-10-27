@@ -5,6 +5,7 @@ REPO_FOLDER="/workspaces/$RepositoryName"
 sudo chmod 777 /etc/apache2/sites-available/000-default.conf
 sudo sed "s@.*DocumentRoot.*@\tDocumentRoot $PWD/wordpress@" .devcontainer/000-default.conf > /etc/apache2/sites-available/000-default.conf
 update-rc.d apache2 defaults
+sudo a2enmod rewrite
 service apache2 start
 
 # WordPress Core install
